@@ -9,6 +9,7 @@ import com.tmdt.group8.dto.user.UserRequest;
 import com.tmdt.group8.entity.*;
 import com.tmdt.group8.repository.*;
 import com.tmdt.group8.utils.CloudinaryUtils;
+import org.springframework.http.HttpStatus;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
