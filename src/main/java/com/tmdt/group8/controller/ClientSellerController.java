@@ -95,6 +95,11 @@ public class ClientSellerController {
             product.setCreatedBy(productRequest.getUserId());
             product.setStore(stores.get(0));
 
+            if(!productRequest.getProductUrl().startsWith(stores.get(0).getUrlStore())) {
+                return new ResponseEntity<>(ApiResponse.builder().statusCode(400).message("Đường link tạo sản phẩm không khớp với đường link cửa hàng").build(),
+                        HttpStatus.BAD_REQUEST);
+            }
+
             Product productSaved = productRepo.save(product);
 
             UrlProduct urlProduct = new UrlProduct();
